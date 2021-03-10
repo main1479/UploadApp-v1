@@ -1,0 +1,132 @@
+:root {
+	--color-bg: #1a133e;
+	--color-primary: #e74c3c;
+	--color-text: #ecf0f1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	line-height: 1.6;
+	font-size: 1.6rem;
+	font-family: sans-serif;
+	background: var(--color-bg);
+	color: var(--color-text);
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+.row {
+	width: 95%;
+	max-width: 114rem;
+	margin: 0 auto;
+}
+
+svg {
+	fill: var(--color-text);
+	width: 100%;
+	height: 100%;
+}
+
+.nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 2.5rem;
+
+	img {
+		max-width: 15rem;
+	}
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	.upload__box {
+		width: 65rem;
+		max-width: 65rem;
+		margin: 0 auto;
+		height: 65rem;
+		background: url(./img/circle.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		border-radius: 50%;
+		transition: all 0.3s cubic-bezier(0.86, 0.49, 0.83, 0.67);
+		cursor: pointer;
+		&.active {
+			background-color: rgba(#e74c3c, 0.1);
+		}
+		.icon__box {
+			width: 5.5rem;
+			height: 5.5rem;
+			margin-bottom: 3rem;
+		}
+		h2.heading {
+			font-size: 3.5rem;
+			margin-bottom: 1rem;
+		}
+		h3.heading {
+			font-size: 3rem;
+			margin-bottom: 3rem;
+		}
+
+		.input__upload {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			opacity: 0;
+			z-index: 1;
+		}
+		.btn {
+			padding: 1.3rem 5rem;
+			background: linear-gradient(120deg, #ecf0f1 0%, #ecf0f1 50%, #e74c3c 50%);
+			background-size: 220%;
+			background-position: 100%;
+			color: var(--color-text);
+			font-size: 1.8rem;
+			display: inline-block;
+			border-radius: 0.5rem;
+			cursor: pointer;
+			position: relative;
+			z-index: 2;
+			transition: all 0.3s cubic-bezier(0.86, 0.49, 0.83, 0.67);
+
+			&:hover {
+				background-position: 0;
+				color: var(--color-bg);
+			}
+		}
+	}
+}
+
+.uploaded{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
