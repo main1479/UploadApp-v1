@@ -26,25 +26,28 @@
 					<h2 class="heading">Drag and drop files here</h2>
 					<h3 class="heading">or</h3>
 					<div class="input__area">
-						<input type="file" name="fileName" id="input" multiple class="input__upload" />
+						<input type="file" name="fileName" id="input" class="input__upload" />
 						<label for="input" class="btn btn__browse">Browse files</label>
 					</div>
 				</div>
 			</div>
 		</main>
-    <ul class="uploaded">
-      <li>
-        <div class="file__info">
-          <h4 class="file__name">fileName.png</h4>
-          <span class="file__size">300kb</span>
-        </div>
-        <div class="file__status">
-          <svg>
-            <use xlink:href="img/icons.svg#icon-check"></use>
-          </svg>
-        </div>
-      </li>
-    </ul>
+		<ul class="uploaded">
+			<!-- <li>
+				<div class="file__info">
+					<h4 class="file__name">fileName.png</h4>
+					<span class="file__size">300kb</span>
+				</div>
+				<div class="file__status">
+					<div class="icon__close" data-id="223">
+						<svg>
+							<use xlink:href="img/icons.svg#icon-close"></use>
+						</svg>
+					</div>
+					<img src="img/logo.png" class="file__preview" alt="file__name" />
+				</div>
+			</li> -->
+		</ul>
 
 		<script src="./app.js"></script>
 	</body>

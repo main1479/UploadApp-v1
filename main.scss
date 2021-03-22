@@ -48,6 +48,9 @@ svg {
 	width: 100%;
 	padding: 2.5rem;
 
+	.row {
+		max-width: none;
+	}
 	img {
 		max-width: 15rem;
 	}
@@ -75,7 +78,6 @@ svg {
 		position: relative;
 		border-radius: 50%;
 		transition: all 0.3s cubic-bezier(0.86, 0.49, 0.83, 0.67);
-		cursor: pointer;
 		&.active {
 			background-color: rgba(#e74c3c, 0.1);
 		}
@@ -102,6 +104,8 @@ svg {
 			display: block;
 			opacity: 0;
 			z-index: 1;
+			cursor: pointer;
+			border-radius: 50%;
 		}
 		.btn {
 			padding: 1.3rem 5rem;
@@ -125,8 +129,133 @@ svg {
 	}
 }
 
-.uploaded{
+.uploaded {
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: 30px;
+	right: 30px;
+	width: 100%;
+	max-width: 35rem;
+	max-height: 40rem;
+	overflow-y: scroll;
+	background: #41377d;
+	border-radius: 1rem;
+	scrollbar-width: none;
+	/* width */
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+	&::-moz-scrollbar {
+		width: 0px !important;
+		display: none;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		border-radius: 100px;
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: #6357a8;
+		border-radius: 100px;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: #463e77;
+	}
+
+	li {
+		position: relative;
+		padding: 1.5rem 2rem;
+		background: #261e53;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		transition: all 0.3s;
+
+		&:hover {
+			background: #2d255e;
+		}
+
+		.file__info {
+			.file__name {
+				font-size: 1.8rem;
+				font-weight: 400;
+				margin-bottom: 0.5rem;
+			}
+			.file__size {
+				font-size: 1.5rem;
+				text-transform: uppercase;
+			}
+		}
+		.file__status {
+			width: 7rem;
+			height: 7rem;
+			border-radius: 50%;
+			background: #42377d;
+			position: relative;
+			overflow: hidden;
+			.icon__close {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: rgba(65, 55, 125, 0.507);
+				transform: translateY(102%);
+				transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+				z-index: 2;
+				cursor: pointer;
+				svg {
+					width: 4rem;
+					height: 4rem;
+					&.spin {
+						animation: spin 2s linear infinite;
+					}
+				}
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&:hover {
+				.icon__close {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.icon__spin {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// transform: translateY(102%);
+	transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	svg {
+		width: 4rem;
+		height: 4rem;
+
+		&.spin {
+			animation: spin 2s linear infinite;
+		}
+	}
 }
